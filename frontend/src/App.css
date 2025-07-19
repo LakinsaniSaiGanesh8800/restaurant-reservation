@@ -222,7 +222,7 @@ nav svg {
 @media (max-width: 1280px) {
   .heroSection .container {
     width: 100%;
-    min-width: fit-content;
+    min-width: -webkit-fill-available;
     padding: 30px 20px;
   }
 }
@@ -397,7 +397,7 @@ nav svg {
     padding: 30px 20px;
   }
   .about .container {
-    min-width: fit-content;
+    min-width: -webkit-fill-available;
   }
 }
 @media (max-width: 1050px) {
@@ -876,7 +876,7 @@ footer .container .banner .right {
   background: #fff;
   height: 100%;
   padding: 20px;
-  box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
+  box-shadow: -moz-box-shadow;
   -webkit-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
   -moz-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
 }

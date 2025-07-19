@@ -18,7 +18,7 @@ const Reservation = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/reservation/send",
+        "http://localhost:4000/api/v1/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
@@ -50,7 +50,7 @@ const Reservation = () => {
           <div className="reservation_form_box">
             <h1>MAKE A RESERVATION</h1>
             <p>For Further Questions, Please Call</p>
-            <form>
+            <form onSubmit={handleReservation}>
               <div>
                 <input
                   type="text"
