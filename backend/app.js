@@ -10,12 +10,21 @@ dotenv.config({ path: "./config.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URI],
-    methods: ["POST"],
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like curl or Thunder Client)
+      if (!origin || origin === process.env.FRONTEND_URL) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 app.use(express.json());
+console.log("Allowed Origin:", process.env.FRONTEND_URL);
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1/reservation", reservationRouter);

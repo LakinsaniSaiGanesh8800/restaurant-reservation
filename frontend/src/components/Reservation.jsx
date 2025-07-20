@@ -14,6 +14,8 @@ const Reservation = () => {
   const [phone, setPhone] = useState(0);
   const navigate = useNavigate();
 
+  console.log("Submitting form...", { firstName, lastName, email, phone, date, time });
+
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
